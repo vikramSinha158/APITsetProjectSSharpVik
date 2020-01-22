@@ -1,0 +1,9 @@
+﻿{
+  "Event": {
+    "EventType": "Text",
+    "EventStatus": "Sent",
+    "EventDate": "2020-02-02T00:00:00"
+  },
+  "FacilityCode": "BOMC",
+  "VisitNumber": "0000026250128"
+}

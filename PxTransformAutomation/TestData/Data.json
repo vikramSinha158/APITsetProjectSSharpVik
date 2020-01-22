@@ -1,0 +1,12 @@
+﻿{
+    "FacilityCode": "BOMC",
+    "VisitNumber": "0000026250128",
+    "VisitType": "O",
+    "StartDateTime": "2005-12-28T00:00:00",
+    "PatientMRN": "M000002625",
+    "EnterpriseID": "M000002625",
+    "InScope": true,
+    "InsuranceCoverage": null,
+    "HospitalServiceLocation": "SNF",
+    "EstimatedServices": null
+  }
