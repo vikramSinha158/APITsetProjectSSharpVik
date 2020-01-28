@@ -11,7 +11,6 @@ namespace PxTransformAutomation.Utilities
 {
     public class Utility
     {
-        private readonly IConfiguration _configuration;
 
         public IConfigurationRoot TranViewDataServiceUrl
         {
@@ -27,7 +26,7 @@ namespace PxTransformAutomation.Utilities
         public string GetFolderPath(string appFolderName)
         {
             var folderName = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            return  Path.Combine(folderName.Substring(0, folderName.LastIndexOf("\\bin")), appFolderName);
+            return  Path.Combine(folderName.Substring(0, folderName.LastIndexOf("\\bin")), appFolderName + "\\");
         }
 
         public string LoadJson(string testDataPath)

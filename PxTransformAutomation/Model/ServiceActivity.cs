@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PxTransformAutomation.Model
 {
-    public class RootObject
+    public class ServiceActivity
     {
         public Visit Visit { get; set; }
     }

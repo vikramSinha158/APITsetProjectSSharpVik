@@ -11,6 +11,7 @@ using System.IO;
 using System.Threading;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
+using System.Reflection;
 
 namespace PxTransformAutomation.Hooks
 {
@@ -28,46 +29,50 @@ namespace PxTransformAutomation.Hooks
         private static ExtentTest scenario;
         private static AventStack.ExtentReports.ExtentReports extent;
         private readonly ScenarioContext _scenarioContext;
-
         private Settings _settings;
-        //IConfigurationRoot config;
+        
+
         public Hooks(Settings settings,ScenarioContext scenarioContext)
         {
             _settings = settings;
             _scenarioContext = scenarioContext;
             _settings.config = _settings.Util.TranViewDataServiceUrl;
+           
         }
 
         [BeforeScenario]
         public void TestSetup()
         {
            string baseUrl= _settings.config["ConnectionStrings:baseUrl"];
+
             _settings.BaseUrl = new Uri(baseUrl);
             _settings.RestClient.BaseUrl = _settings.BaseUrl;
          
         }
 
+
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            string file = "ExtentReport.html";
-            var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, file);
-            //Initialize Extent report before test starts
+           string file = "ExtentReport.html";
+
+            var folderName = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);           
+            var path = Path.Combine(folderName.Substring(0, folderName.LastIndexOf("\\bin"))+"\\Reports", file);     
             var htmlReporter = new ExtentHtmlReporter(path);
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            //Attach report to reporter
             extent = new AventStack.ExtentReports.ExtentReports();
             extent.AttachReporter(htmlReporter);
 
-            
+
+
+
         }
 
         [AfterTestRun]
         public static void TearDownReport()
         {
-            Thread.Sleep(2000);
-            //Flush report once test completes
             extent.Flush();
+           
         }
 
         [BeforeFeature]
@@ -82,10 +87,15 @@ namespace PxTransformAutomation.Hooks
         [AfterStep]
         public void InsertReportingSteps()
         {
+            
+
+            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("ScenarioExecutionStatus", BindingFlags.Instance | BindingFlags.Public);
+            MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
+            object TestResult = getter.Invoke(_scenarioContext, null);
 
             var stepType = _scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
 
-            if (_scenarioContext.TestError == null)
+            if (_scenarioContext.TestError == null && TestResult.ToString()!= "StepDefinitionPending")
             {
                 if (stepType == "Given")
                     scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
@@ -105,6 +115,19 @@ namespace PxTransformAutomation.Hooks
                 else if (stepType == "Then")
                     scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
             }
+
+
+            //Pending Status
+            if (_scenarioContext.ScenarioExecutionStatus.ToString() == "StepDefinitionPending")
+            {
+                if (stepType == "Given")
+                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
+                else if (stepType == "When")
+                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
+                else if (stepType == "Then")
+                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
+
+            }
         }
 
         [BeforeScenario]
@@ -112,6 +135,11 @@ namespace PxTransformAutomation.Hooks
         {
         //Create dynamic scenario name
         scenario = featureName.CreateNode<Scenario>(_scenarioContext.ScenarioInfo.Title);
+        }
+
+        private string GetCongigData()
+        {
+            return _settings.config["ConnectionStrings:ReportName"];
         }
     }
 }

@@ -31,11 +31,20 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
-    <Folder Include="DatabaseConn\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\dashboard.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="xunit.runner.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
