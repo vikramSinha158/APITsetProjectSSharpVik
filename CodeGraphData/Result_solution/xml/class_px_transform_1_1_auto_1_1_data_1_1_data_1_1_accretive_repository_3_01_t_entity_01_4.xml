@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4" kind="class" prot="public">
+    <compoundname>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</compoundname>
+    <basecompoundref refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4" prot="public" virt="non-virtual">PxTransform.Auto.Data.Base.IRepository&lt; TEntity &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>TEntity</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a16260b39e597e51b4903412c732e50b6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_context" kindref="compound">AccretiveContext</ref></type>
+        <definition>AccretiveContext PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;._context</definition>
+        <argsstring></argsstring>
+        <name>_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="11" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1af3e2f02dfd50d13bb025caa186fbb98f" prot="private" static="no" mutable="no">
+        <type>DbSet&lt; TEntity &gt;</type>
+        <definition>DbSet&lt;TEntity&gt; PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="12" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1abb0f4fcc13ef33ec316fca704c2f0520" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.AccretiveRepository</definition>
+        <argsstring>(AccretiveContext context)</argsstring>
+        <name>AccretiveRepository</name>
+        <param>
+          <type><ref refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_context" kindref="compound">AccretiveContext</ref></type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="14" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ac26e57e6b2297ea4bc8dc3202532add0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TEntity</type>
+        <definition>TEntity PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.GetById</definition>
+        <argsstring>(object id)</argsstring>
+        <name>GetById</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1ab3626cf2291cbcd72d49fcd4c941e785">GetById</reimplements>
+        <param>
+          <type>object</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="21" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a1bd4ef7867e484f004b795651688c3bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Delete</definition>
+        <argsstring>(IEnumerable&lt; TEntity &gt; entities)</argsstring>
+        <name>Delete</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a7560e2aaa5d01125a5d4ffdc9e86e6bd">Delete</reimplements>
+        <param>
+          <type>IEnumerable&lt; TEntity &gt;</type>
+          <declname>entities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="26" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a7027427d2c566e70564d00b9d8fa42d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; TEntity &gt;</type>
+        <definition>IEnumerable&lt;TEntity&gt; PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.GetAll</definition>
+        <argsstring>()</argsstring>
+        <name>GetAll</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a60b5d0d9ad491aaa9c696725bc25b6e7">GetAll</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="31" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a0c5757e27f6e2cedacfcfe29a7f9d9ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Delete</definition>
+        <argsstring>(object id)</argsstring>
+        <name>Delete</name>
+        <param>
+          <type>object</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="37" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a6ca03d078350dc3fc5f11d5eacc48577" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Insert</definition>
+        <argsstring>(TEntity entity)</argsstring>
+        <name>Insert</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a2575eefb8af7abb66b8f3ba1a88b1146">Insert</reimplements>
+        <param>
+          <type>TEntity</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="43" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a2685c10e25ac5a2b6fa5a45a7d65e063" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Insert</definition>
+        <argsstring>(IEnumerable&lt; TEntity &gt; entities)</argsstring>
+        <name>Insert</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a7672f1a93b864a493152522196ad57ff">Insert</reimplements>
+        <param>
+          <type>IEnumerable&lt; TEntity &gt;</type>
+          <declname>entities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="48" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ad63160cdd91f23aab6f15bab300c25f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Update</definition>
+        <argsstring>(TEntity entity)</argsstring>
+        <name>Update</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a31f044425831b98a660a7dad8b08a642">Update</reimplements>
+        <param>
+          <type>TEntity</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="53" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1af9c7e835fa80c26258eaf1a0f70f59ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Update</definition>
+        <argsstring>(IEnumerable&lt; TEntity &gt; entities)</argsstring>
+        <name>Update</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a5a75f3170d199fa92ecfa9853b5c132b">Update</reimplements>
+        <param>
+          <type>IEnumerable&lt; TEntity &gt;</type>
+          <declname>entities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="58" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ad5f8fc43dc0f8c1fe6a1b2fbb99c3a5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;.Delete</definition>
+        <argsstring>(TEntity entity)</argsstring>
+        <name>Delete</name>
+        <reimplements refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4_1a1e3064ce66f0d5bb848cf7b33c401745">Delete</reimplements>
+        <param>
+          <type>TEntity</type>
+          <declname>entity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="63" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="63" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;</label>
+        <link refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IRepository&lt; TEntity &gt;</label>
+        <link refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>PxTransform.Auto.Data.Data.AccretiveContext</label>
+        <link refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_context"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>PxTransform.Auto.Data.Data.AccretiveRepository&lt; TEntity &gt;</label>
+        <link refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>_context</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>DbContext</label>
+      </node>
+      <node id="7">
+        <label>IRepository&lt; TEntity &gt;</label>
+        <link refid="interface_px_transform_1_1_auto_1_1_data_1_1_base_1_1_i_repository_3_01_t_entity_01_4"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" line="10" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Data/AccretiveRepository.cs" bodystart="9" bodyend="67"/>
+    <listofallmembers>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a16260b39e597e51b4903412c732e50b6" prot="private" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>_context</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1abb0f4fcc13ef33ec316fca704c2f0520" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>AccretiveRepository</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a1bd4ef7867e484f004b795651688c3bf" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Delete</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a0c5757e27f6e2cedacfcfe29a7f9d9ab" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Delete</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ad5f8fc43dc0f8c1fe6a1b2fbb99c3a5b" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Delete</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a7027427d2c566e70564d00b9d8fa42d8" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>GetAll</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ac26e57e6b2297ea4bc8dc3202532add0" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>GetById</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a6ca03d078350dc3fc5f11d5eacc48577" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Insert</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1a2685c10e25ac5a2b6fa5a45a7d65e063" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Insert</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1af3e2f02dfd50d13bb025caa186fbb98f" prot="private" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>table</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1ad63160cdd91f23aab6f15bab300c25f7" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Update</name></member>
+      <member refid="class_px_transform_1_1_auto_1_1_data_1_1_data_1_1_accretive_repository_3_01_t_entity_01_4_1af9c7e835fa80c26258eaf1a0f70f59ac" prot="public" virt="non-virtual"><scope>PxTransform::Auto::Data::Data::AccretiveRepository&lt; TEntity &gt;</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

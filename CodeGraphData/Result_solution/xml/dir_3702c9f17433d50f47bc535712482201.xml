@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_3702c9f17433d50f47bc535712482201" kind="dir">
+    <compoundname>C:/ApiAutomation/PxTransformAutomation</compoundname>
+    <innerdir refid="dir_5b0b00ac3525b45626a3b8a69388708b">C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data</innerdir>
+    <innerdir refid="dir_ca8596d1e50dac802003a8b9ef09e77d">C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/"/>
+  </compounddef>
+</doxygen>

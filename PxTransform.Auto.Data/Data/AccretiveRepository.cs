@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using PxTransform.Auto.Data.Base;
@@ -30,7 +31,7 @@ namespace PxTransform.Auto.Data.Data
 
         public IEnumerable<TEntity> GetAll()
         {
-            //return table.Take(10).ToList();
+            return table.Take(10).ToList();
             throw new NotImplementedException();
         }
 
@@ -63,6 +64,11 @@ namespace PxTransform.Auto.Data.Data
         public void Delete(TEntity entity)
         {
             throw new NotImplementedException();
+        }
+
+        public IQueryable<TEntity> GetQuery(TEntity entity)
+        {
+            return table;
         }
     }
 }

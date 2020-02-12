@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_px_transform_automation_1_1_utilities" kind="namespace">
+    <compoundname>PxTransformAutomation::Utilities</compoundname>
+    <innerclass refid="class_px_transform_automation_1_1_utilities_1_1_libraries" prot="public">PxTransformAutomation::Utilities::Libraries</innerclass>
+    <innerclass refid="class_px_transform_automation_1_1_utilities_1_1_utility" prot="public">PxTransformAutomation::Utilities::Utility</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Utilities/Libraries.cs" line="14" column="1"/>
+  </compounddef>
+</doxygen>

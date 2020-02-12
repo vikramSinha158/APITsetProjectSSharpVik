@@ -33,13 +33,18 @@ namespace PxTransformAutomation.Utilities
         {
             using (StreamReader r = new StreamReader(testDataPath))
             {
-                var json = r.ReadToEnd();
-                var items = JsonConvert.DeserializeObject<TextInfo>(json);      
+                var json = r.ReadToEnd();     
                 return JObject.Parse(json).ToString();
  
             }
         }
 
+        public string GetTestData(String key)
+        {           
+            JObject obs1 = JObject.Parse(LoadJson(GetFolderPath(TranViewDataServiceUrl["ConnectionStrings:TestDataName"]) + TranViewDataServiceUrl["ConnectionStrings:ConfigFile"]));
+            return obs1[key].ToString();
+
+        }
 
 
     }

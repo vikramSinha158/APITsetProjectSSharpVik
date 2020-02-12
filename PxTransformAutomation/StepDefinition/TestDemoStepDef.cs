@@ -10,21 +10,49 @@ using System.Text;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using PxTransformAutomation.Utilities;
+using Microsoft.EntityFrameworkCore;
+using PxTransform.Auto.Data;
+using PxTransform.Auto.Data.Data;
+using PxTransform.Auto.Data.Domain.Accretive;
+
+using System.Linq;
+using PxTransform.Auto.Data.Domain.Tran;
+using PxTransformAutomation.DataService;
 
 namespace PxTransformAutomation.StepDefinition
 {
     [Binding]
     class TestDemoStepDef
     {
+       
         private Settings _settings;
-        public TestDemoStepDef(Settings settings) => _settings = settings;
+        private readonly TranContext tranContext;
+        private DataCollector _dataCollector;
+        private readonly ScenarioContext _scenarioContext;
         string facValue = string.Empty;
 
-    
+        public TestDemoStepDef(Settings settings, DataCollector dataCollector, ScenarioContext scenarioContext)
+        {
+            _settings = settings;
+            _dataCollector = dataCollector;
+            _scenarioContext = scenarioContext;
+            tranContext = _dataCollector.GetLocationInstance().GetTranContext(_settings.Util.TranViewDataServiceUrl["ConnectionStrings:TranFacilityCodeBCOR"]);
+        } 
+        
 
         [Given(@"User perform GET  operation for ""(.*)""")]
         public void GivenUserPerformGETOperationFor(string url)
-        {          
+        {
+
+            //var regdata  = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(tranContext);
+
+            //foreach (var item in regdata)
+            //{
+            //    string dddff = item.ID.ToString();
+            //    string fffdfd = item.PatientType.ToString();
+            //    string kkk = item.EncounterID.ToString();
+            //} 
+            string dddddd = _settings.Util.GetTestData("FacilityCode");
             _settings.Request = _settings.lib.GetRequest(url, Method.GET);
         }
 

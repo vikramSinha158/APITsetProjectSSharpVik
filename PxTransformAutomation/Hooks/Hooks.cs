@@ -12,7 +12,9 @@ using System.Threading;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using System.Reflection;
-
+using PxTransform.Auto.Data.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 namespace PxTransformAutomation.Hooks
 {
     
@@ -63,9 +65,6 @@ namespace PxTransformAutomation.Hooks
             extent = new AventStack.ExtentReports.ExtentReports();
             extent.AttachReporter(htmlReporter);
 
-
-
-
         }
 
         [AfterTestRun]
@@ -109,9 +108,9 @@ namespace PxTransformAutomation.Hooks
             else if (_scenarioContext.TestError != null)
             {
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.InnerException);
+                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.InnerException);
+                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
                 else if (stepType == "Then")
                     scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
             }

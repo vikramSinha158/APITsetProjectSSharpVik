@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
+    <Folder Include="Features\AuthScheduler\" />
     <Folder Include="Reports\" />
   </ItemGroup>
 
@@ -51,6 +51,10 @@
 
   <ItemGroup>
     <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PxTransform.Auto.Data\PxTransform.Auto.Data.csproj" />
   </ItemGroup>
 
 </Project>

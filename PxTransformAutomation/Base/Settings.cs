@@ -5,10 +5,13 @@ using System.Collections.Generic;
 using System.Text;
 using TechTalk.SpecFlow;
 using Microsoft.Extensions.Configuration;
+using PxTransform.Auto.Data.Data;
+using PxTransform.Auto.Data.Domain.Accretive;
+
 
 namespace PxTransformAutomation.Base
 {
-    class Settings
+    public class Settings
     {
         public Uri BaseUrl { get; set; }
         public IRestResponse Response { get; set; }
@@ -18,6 +21,10 @@ namespace PxTransformAutomation.Base
         public Utility Util { get; set; } = new Utility();
         public Dictionary<string, string> ParameterList { get; set; } = new Dictionary<string, string>();
         public IConfigurationRoot config { get; set; }
+
+        
+
+
 
 
     }

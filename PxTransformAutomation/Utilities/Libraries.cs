@@ -37,6 +37,18 @@ namespace PxTransformAutomation.Utilities
              request.AddParameter(param.Key, param.Value, ParameterType.UrlSegment);
         }
 
+        public void AddQueryParameter(IRestRequest request, Dictionary<String, String> queryParams)
+        {
+            foreach (var param in queryParams)
+                request.AddQueryParameter(param.Key, param.Value);
+        }
+
+        public void AddHeaderParameter(IRestRequest request, Dictionary<String, String> headerParams)
+        {
+            foreach (var param in headerParams)
+                request.AddHeader(param.Key, param.Value);
+        }
+
         public void AddPostRequestBody(IRestRequest request,string addBody)
         {
             request.RequestFormat = DataFormat.Json;

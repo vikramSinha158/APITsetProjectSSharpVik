@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_f27574a110f28785c92f97caa7325f2b" kind="dir">
+    <compoundname>C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model</compoundname>
+    <innerfile refid="_event_8cs">Event.cs</innerfile>
+    <innerfile refid="_service_activity_8cs">ServiceActivity.cs</innerfile>
+    <innerfile refid="_text_info_8cs">TextInfo.cs</innerfile>
+    <innerfile refid="_visit_8cs">Visit.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model/"/>
+  </compounddef>
+</doxygen>

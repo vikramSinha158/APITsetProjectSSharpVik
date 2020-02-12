@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespace_px_transform_automation_1_1_base" kind="namespace">
+    <compoundname>PxTransformAutomation::Base</compoundname>
+    <innerclass refid="class_px_transform_automation_1_1_base_1_1_settings" prot="public">PxTransformAutomation::Base::Settings</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Base/Settings.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

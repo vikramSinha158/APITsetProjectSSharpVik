@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_px_transform_automation_1_1_model_1_1_service_activity" kind="class" prot="public">
+    <compoundname>PxTransformAutomation::Model::ServiceActivity</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_px_transform_automation_1_1_model_1_1_service_activity_1aa26ac01e41ce0b5f29dcf704f48c3225" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_px_transform_automation_1_1_model_1_1_visit" kindref="compound">Visit</ref></type>
+        <definition>Visit PxTransformAutomation.Model.ServiceActivity.Visit</definition>
+        <argsstring></argsstring>
+        <name>Visit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model/ServiceActivity.cs" line="9" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model/ServiceActivity.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model/ServiceActivity.cs" line="8" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Model/ServiceActivity.cs" bodystart="7" bodyend="10"/>
+    <listofallmembers>
+      <member refid="class_px_transform_automation_1_1_model_1_1_service_activity_1aa26ac01e41ce0b5f29dcf704f48c3225" prot="public" virt="non-virtual"><scope>PxTransformAutomation::Model::ServiceActivity</scope><name>Visit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

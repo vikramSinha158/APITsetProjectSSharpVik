@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def" kind="class" prot="public">
+    <compoundname>PxTransformAutomation::StepDefinition::TestDemoStepDef</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a9cc179826e08753504416f0875b00842" prot="private" static="no" mutable="no">
+        <type><ref refid="class_px_transform_automation_1_1_base_1_1_settings" kindref="compound">Settings</ref></type>
+        <definition>Settings PxTransformAutomation.StepDefinition.TestDemoStepDef._settings</definition>
+        <argsstring></argsstring>
+        <name>_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="19" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a3c6efa79da16c2fe93e055c9f15ff2cd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string PxTransformAutomation.StepDefinition.TestDemoStepDef.facValue</definition>
+        <argsstring></argsstring>
+        <name>facValue</name>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="21" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a33e3ab7f6a561bfb3bb8d9698f950fd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PxTransformAutomation.StepDefinition.TestDemoStepDef.TestDemoStepDef</definition>
+        <argsstring>(Settings settings)</argsstring>
+        <name>TestDemoStepDef</name>
+        <param>
+          <type><ref refid="class_px_transform_automation_1_1_base_1_1_settings" kindref="compound">Settings</ref></type>
+          <declname>settings</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ab5d6f0901c70ef9477c3a8c41664a399" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserPerformGETOperationFor</definition>
+        <argsstring>(string url)</argsstring>
+        <name>GivenUserPerformGETOperationFor</name>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="26" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac6af8f1793549178f4bb66809fcead24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserSendThePathParmeterAsAnd</definition>
+        <argsstring>(string facilitycode, string EncounterId)</argsstring>
+        <name>GivenUserSendThePathParmeterAsAnd</name>
+        <param>
+          <type>string</type>
+          <declname>facilitycode</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>EncounterId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="32" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a6f799b13c6b5f00cc557f73bd58cc4d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserTheGetTheResponseForTheRequest</definition>
+        <argsstring>()</argsstring>
+        <name>GivenUserTheGetTheResponseForTheRequest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="41" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a8a44684f179157cf6e216a5c8de3b6d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.ThenUserShouldSeeTheNameAs</definition>
+        <argsstring>(string p0, string p1)</argsstring>
+        <name>ThenUserShouldSeeTheNameAs</name>
+        <param>
+          <type>string</type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>p1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="51" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a411a13d7e12d1705de7f470e1fd39a0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserPerformPOSTOperationFor</definition>
+        <argsstring>(string url)</argsstring>
+        <name>GivenUserPerformPOSTOperationFor</name>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="57" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1aac4bdc31f4243fc7ab48e4db94b8f9ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserSendThePathParameterAnd</definition>
+        <argsstring>(string facilitycode, string EncounterId)</argsstring>
+        <name>GivenUserSendThePathParameterAnd</name>
+        <param>
+          <type>string</type>
+          <declname>facilitycode</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>EncounterId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="63" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="63" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac43de564273bcc83045eb1c243e72435" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.GivenUserSendAsABodyForPOSTRequest</definition>
+        <argsstring>(string TextData)</argsstring>
+        <name>GivenUserSendAsABodyForPOSTRequest</name>
+        <param>
+          <type>string</type>
+          <declname>TextData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="72" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a9af19a4684457ce9a7d8a746749bc849" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.ThenUserShouldReceiveAsAStatusCode</definition>
+        <argsstring>(int p0)</argsstring>
+        <name>ThenUserShouldReceiveAsAStatusCode</name>
+        <param>
+          <type>int</type>
+          <declname>p0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="80" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac7778c229fb4bdec3f19a4ca449aacf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PxTransformAutomation.StepDefinition.TestDemoStepDef.ThenUserShouldSeeTheFacilityCode</definition>
+        <argsstring>(string p0)</argsstring>
+        <name>ThenUserShouldSeeTheFacilityCode</name>
+        <param>
+          <type>string</type>
+          <declname>p0</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="89" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="89" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="64">
+        <label>PxTransformAutomation.Base.Settings</label>
+        <link refid="class_px_transform_automation_1_1_base_1_1_settings"/>
+      </node>
+      <node id="63">
+        <label>PxTransformAutomation.StepDefinition.TestDemoStepDef</label>
+        <link refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def"/>
+        <childnode refid="64" relation="usage">
+          <edgelabel>_settings</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" line="18" column="1" bodyfile="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/StepDefinition/TestDemoStepDef.cs" bodystart="17" bodyend="95"/>
+    <listofallmembers>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a9cc179826e08753504416f0875b00842" prot="private" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>_settings</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a3c6efa79da16c2fe93e055c9f15ff2cd" prot="private" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>facValue</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ab5d6f0901c70ef9477c3a8c41664a399" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserPerformGETOperationFor</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a411a13d7e12d1705de7f470e1fd39a0d" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserPerformPOSTOperationFor</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac43de564273bcc83045eb1c243e72435" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserSendAsABodyForPOSTRequest</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1aac4bdc31f4243fc7ab48e4db94b8f9ae" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserSendThePathParameterAnd</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac6af8f1793549178f4bb66809fcead24" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserSendThePathParmeterAsAnd</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a6f799b13c6b5f00cc557f73bd58cc4d4" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>GivenUserTheGetTheResponseForTheRequest</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a33e3ab7f6a561bfb3bb8d9698f950fd5" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>TestDemoStepDef</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a9af19a4684457ce9a7d8a746749bc849" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>ThenUserShouldReceiveAsAStatusCode</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1ac7778c229fb4bdec3f19a4ca449aacf1" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>ThenUserShouldSeeTheFacilityCode</name></member>
+      <member refid="class_px_transform_automation_1_1_step_definition_1_1_test_demo_step_def_1a8a44684f179157cf6e216a5c8de3b6d0" prot="public" virt="non-virtual"><scope>PxTransformAutomation::StepDefinition::TestDemoStepDef</scope><name>ThenUserShouldSeeTheNameAs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

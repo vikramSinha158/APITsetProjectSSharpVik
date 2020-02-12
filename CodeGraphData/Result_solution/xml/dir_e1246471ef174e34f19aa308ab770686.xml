@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_e1246471ef174e34f19aa308ab770686" kind="dir">
+    <compoundname>C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Features</compoundname>
+    <innerfile refid="_physician_search_8feature_8cs">PhysicianSearch.feature.cs</innerfile>
+    <innerfile refid="_test_demo_8feature_8cs">TestDemo.feature.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransformAutomation/Features/"/>
+  </compounddef>
+</doxygen>

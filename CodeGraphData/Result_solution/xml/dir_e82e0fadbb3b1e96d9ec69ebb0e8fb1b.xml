@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_e82e0fadbb3b1e96d9ec69ebb0e8fb1b" kind="dir">
+    <compoundname>C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Base</compoundname>
+    <innerfile refid="_i_repository_8cs">IRepository.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/ApiAutomation/PxTransformAutomation/PxTransform.Auto.Data/Base/"/>
+  </compounddef>
+</doxygen>

@@ -79,14 +79,14 @@ namespace PxTransformAutomation.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "UserName",
                         "Password"});
-            table2.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "Phreesia",
                         "wRUf^6eP8ixEc^F7agU+"});
 #line 5
-testRunner.Given("User authentication with following details", ((string)(null)), table2, "Given ");
+testRunner.Given("User authentication with following details", ((string)(null)), table1, "Given ");
 #line hidden
         }
         

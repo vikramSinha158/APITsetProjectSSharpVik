@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PxTransform.Auto.Data.Base
 {
@@ -21,6 +23,8 @@ namespace PxTransform.Auto.Data.Base
         void Delete(TEntity entity);
 
         void Delete(IEnumerable<TEntity> entities);
+
+       
 
     }
 }
