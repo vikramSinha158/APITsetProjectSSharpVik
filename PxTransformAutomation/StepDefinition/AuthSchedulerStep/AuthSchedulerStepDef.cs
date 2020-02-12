@@ -34,7 +34,8 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         [Given(@"User has GET request AuthAPI with mindaysout and maxdaysout parameters")]
         public void GivenUserHasGETRequestAuthAPIWithMindaysoutAndMaxdaysoutParameters()
         {
-            _settings.Request = _settings.lib.GetRequest("api/authorization?mindaysout=0&maxdaysout=5", Method.GET);
+            // _settings.Request = _settings.lib.GetRequest("api/authorization?mindaysout=0&maxdaysout=5", Method.GET);
+            _settings.Request = _settings.lib.GetRequest(_settings.Util.GetTestData("Authurl"), Method.GET);
         }
 
         [Given(@"Add Header As facilityCode With its value")]
