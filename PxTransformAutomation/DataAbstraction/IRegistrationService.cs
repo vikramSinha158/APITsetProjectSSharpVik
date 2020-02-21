@@ -10,5 +10,9 @@ namespace PxTransformAutomation.Abstraction
     public interface IRegistrationService
     {
         List<EligibleAccounts> GetAuthEligibleAccounts(TranContext tranContext, AccretiveContext accretiveContext);
+
+        List<EligibleAccounts> GetEligibleAuthschedulerlog(TranContext tranContext, List<int> actualResistrationIDs);
+
+        List<EligibleAccounts> GetEligibleAuthRequestLog(TranContext tranContext, List<int> actualResistrationIDs);
     }
 }

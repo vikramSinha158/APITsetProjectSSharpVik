@@ -21,7 +21,7 @@ namespace PxTransformAutomation.DataService
             var payorplans=  tranContext.PayorPlans.ToList();
 
             int? minDaysOut = 0;
-            int? maxDaysOut = 5;
+            int? maxDaysOut = 15;
             var result33 = (from hipaaConnector in accretiveContext.HIPAAConnectors
                             join hipaaPayorConnector in accretiveContext.HIPAAPayorConnectors on hipaaConnector.ID equals hipaaPayorConnector.ConnectorID
                             join accPayers in accretiveContext.Payors on hipaaPayorConnector.PayorCode.Trim() equals accPayers.PayorCode.Trim()
@@ -70,6 +70,37 @@ namespace PxTransformAutomation.DataService
             var res = result.Except(AuthComplteAccount).ToList();
             return res;
          
+        }
+
+        public List<EligibleAccounts> GetEligibleAuthschedulerlog(TranContext tranContext,List<int> actualResistrationIDs)
+        {
+
+            //select distinct registrationid  from Authschedulerlog where  createddatetime > '2020-02-17' -- current date , no time
+            //and  registrationid in (1333845)
+
+            var authSchedulerLogResult = (from authScheduler in tranContext.AuthSchedulerLog
+                                          where authScheduler.CreatedDateTime > DateTime.Now && actualResistrationIDs.Contains(authScheduler.RegistrationID)
+                                          select new EligibleAccounts
+                                          {
+                                              RegistrationID = authScheduler.RegistrationID
+
+                                          }).Distinct().ToList();
+            return authSchedulerLogResult;
+        }
+
+        public List<EligibleAccounts> GetEligibleAuthRequestLog(TranContext tranContext, List<int> actualResistrationIDs)
+        {
+            //select distinct registrationid  from Authschedulerlog where  createddatetime > '2020-02-17' -- current date , no time
+            //and  registrationid in (1333845)
+
+            var authSchedulerLogResult = (from authScheduler in tranContext.AuthRequestLog
+                                          where authScheduler.DateSent > DateTime.Now && actualResistrationIDs.Contains(authScheduler.RegistrationID)
+                                          select new EligibleAccounts
+                                          {
+                                              RegistrationID = authScheduler.RegistrationID
+
+                                          }).Distinct().ToList();
+            return authSchedulerLogResult;
         }
     }
 }

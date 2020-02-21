@@ -34,5 +34,9 @@ namespace PxTransform.Auto.Data.Data
         public virtual DbSet<RecordTaskStatus> RecordTaskStatus { get; set; }
         public virtual DbSet<PayorPlan> PayorPlans { get; set; }
 
+        public virtual DbSet<AuthSchedulerLog> AuthSchedulerLog { get; set; }
+
+        public virtual DbSet<AuthRequestLog> AuthRequestLog { get; set; }
+
     }
 }

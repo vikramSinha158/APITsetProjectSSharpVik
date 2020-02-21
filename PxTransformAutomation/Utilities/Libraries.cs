@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using RestSharp.Serialization.Json;
 using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.Configuration;
+using PxTransform.Auto.Data.Domain.Tran;
 
 namespace PxTransformAutomation.Utilities
 {
@@ -86,7 +87,19 @@ namespace PxTransformAutomation.Utilities
         {
             JObject obs = JObject.Parse(response.Content);
             return obs[responseObject].ToString();
-        }  
+        }
+
+        public List<int> GetRegistrationIDlist(List<EligibleAccounts> data) 
+        {
+            List<int> regisID = new List<int>();
+            foreach (var item in data)
+            {
+                regisID.Add(item.RegistrationID);
+            }
+
+            regisID.Sort();
+            return regisID;
+        }
 
     }
 }

@@ -46,6 +46,16 @@ namespace PxTransformAutomation.Utilities
 
         }
 
+        public void CleanDictionary(Dictionary<string, string> ParameterList)
+        {
+            if (ParameterList.Count != 0)
+            {
+               ParameterList.Clear();
+            }
+        }
+
+    
+
 
     }
 }
