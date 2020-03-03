@@ -9,23 +9,23 @@ using System.Linq;
 using System.Collections;
 using PxTransform.Auto.Data.Domain.Tran;
 using PxTransform.Auto.Data.Domain.Accretive;
+using PxTransform.Auto.Data.Domain.Common;
 
 namespace PxTransformAutomation.DataService
 {
     public class RegistrationService: IRegistrationService
     {
          
-        public List<EligibleAccounts> GetAuthEligibleAccounts(TranContext tranContext,AccretiveContext accretiveContext)        
+        public List<EligibleAccounts> GetAuthEligibleAccounts(TranContext tranContext,AccretiveContext accretiveContext, int? minDaysOut, int? maxDaysOut)        
         {
 
             var payorplans=  tranContext.PayorPlans.ToList();
 
-            int? minDaysOut = 0;
-            int? maxDaysOut = 15;
-            var result33 = (from hipaaConnector in accretiveContext.HIPAAConnectors
+            //int? minDaysOut = 0;
+            //int? maxDaysOut = 5;
+            var PayorPlanID = (from hipaaConnector in accretiveContext.HIPAAConnectors
                             join hipaaPayorConnector in accretiveContext.HIPAAPayorConnectors on hipaaConnector.ID equals hipaaPayorConnector.ConnectorID
                             join accPayers in accretiveContext.Payors on hipaaPayorConnector.PayorCode.Trim() equals accPayers.PayorCode.Trim()
-                            //join payerPlan in tranContext.PayorPlans.ToList() on accPayers.PayorCode == null ? null : accPayers.PayorCode.Trim() equals payerPlan.PayorCode == null ? null : payerPlan.PayorCode.Trim()
                             where hipaaPayorConnector.Status == true && hipaaConnector.Description.Contains("AH Spider") && hipaaConnector.Enabled == true
                             select new
                             {
@@ -34,49 +34,70 @@ namespace PxTransformAutomation.DataService
 
 
             var PayorPlanIDs = (from qc1 in payorplans
-                                join qc2 in result33 on qc1.PayorCode == null ? null : qc1.PayorCode.Trim() equals qc2.PayorCode == null ? null : qc2.PayorCode.Trim()
+                                join qc2 in PayorPlanID on qc1.PayorCode == null ? null : qc1.PayorCode.Trim() equals qc2.PayorCode == null ? null : qc2.PayorCode.Trim()
                                 select new
                                 {
                                     Id = qc1.ID
                                 }).ToList().Select(x => x.Id).ToList();
 
+            var registrations = (from reg in tranContext.Registrations
+                                 where reg.IsDischarged == false && (reg.AdmitDate >= DateTime.Now.Date.AddDays(minDaysOut.Value) && reg.AdmitDate <= DateTime.Now.Date.AddDays(maxDaysOut.Value))
+                                 && AccountProperty.PatientTypes.Contains(reg.PatientType)
+                                 select new
+                                 {
+                                     RegistrationID = reg.ID,
+                                     EncounterID = reg.EncounterID,
+                                     PatientType = reg.PatientType,
+                                     AdmitDate = reg.AdmitDate,
+                                     FacilityCode=reg.FacilityCode
 
-            var AuthComplteAccount = (from reg in tranContext.Registrations
-                                      join recordStatus in tranContext.RecordTaskStatus.Where(rec => rec.TaskID == 32) on reg.ID equals recordStatus.RecordKey
-                                      where reg.AdmitDate >= DateTime.Now.AddDays(minDaysOut.Value) && reg.AdmitDate <= DateTime.Now.AddDays(maxDaysOut.Value) && reg.PatientType != "E" && (recordStatus.Status == 1 || recordStatus.Status == 4)
-                                      select new EligibleAccounts
-                                      {  
-                                          RegistrationID = reg.ID,
-                                          EncounterID = reg.EncounterID,
-                                          PatientType = reg.PatientType,
-                                          AdmitDate = reg.AdmitDate
+                                 }).Distinct();
 
-                                      }).ToList();
-          
+            var AuthCompltedAccount = (from reg in registrations
+                                       join regAuth in tranContext.RegistrationAuthorizations on reg.RegistrationID equals regAuth.RegistrationID
+                                       join auth in tranContext.Authorizations on regAuth.AuthorizationID equals auth.ID
+                                       join recordStatus in tranContext.RecordTaskStatus.Where(rec => rec.TaskID == 32) on reg.RegistrationID equals recordStatus.RecordKey
+                                       where (recordStatus.Status == 1 || recordStatus.Status == 4)
+                                       && auth.AuthorizationValidationStatusID == 1
+                                       select new
+                                       {
+                                           RegistrationID = reg.RegistrationID,
+                                           EncounterID = reg.EncounterID,
+                                           PatientType = reg.PatientType,
+                                           AdmitDate = reg.AdmitDate,
+                                           FacilityCode = reg.FacilityCode
+                                       }).ToList().Distinct();
 
-            var result = (from reg in tranContext.Registrations
-                          join cov in tranContext.Coverages on reg.ID equals cov.RegistrationID
-                          //join service in tranContext.Services on reg.ID equals service.RegistrationID
-                          //join authNeed in tranContext.AuthorizationNeeds on cov.ID equals authNeed.CoverageID
-                          where reg.AdmitDate >= DateTime.Now.AddDays(minDaysOut.Value) && reg.AdmitDate <= DateTime.Now.AddDays(maxDaysOut.Value) && reg.PatientType != "E" && PayorPlanIDs.Contains(cov.PayorPlanID.Value) && cov.CoverageStatus == "A" && cov.VerificationStatus == 1 //&& service.IsFinal == true && authNeed.NeedAuth == true
-                          select new EligibleAccounts
-                          {
-                              RegistrationID = reg.ID,
-                              EncounterID = reg.EncounterID,
-                              PatientType = reg.PatientType,
-                              AdmitDate = reg.AdmitDate
-                          }).ToList();
+            var authRecords = (from reg in registrations
+                               join cov in tranContext.Coverages on reg.RegistrationID equals cov.RegistrationID
+                               where reg.AdmitDate != null && reg.AdmitDate >= DateTime.Now.Date.AddDays(minDaysOut.Value) && reg.AdmitDate <= DateTime.Now.Date.AddDays(maxDaysOut.Value) && reg.PatientType != "E" && PayorPlanIDs.Contains(cov.PayorPlanID.Value) && cov.CoverageStatus == "A" && cov.VerificationStatus == 1 // && service.IsFinal == true && authNeed.NeedAuth == true
+                               select new
+                               {
+                                   RegistrationID = reg.RegistrationID,
+                                   EncounterID = reg.EncounterID,
+                                   PatientType = reg.PatientType,
+                                   AdmitDate = reg.AdmitDate,
+                                   FacilityCode = reg.FacilityCode
+                               }).ToList().Except(AuthCompltedAccount);
+        
 
-            var res = result.Except(AuthComplteAccount).ToList();
-            return res;
-         
+
+            var EligibleAuthRec = (from em in authRecords
+                             select new EligibleAccounts
+                             {
+                                 RegistrationID = em.RegistrationID,
+                                 EncounterID = em.EncounterID,
+                                 PatientType = em.PatientType,
+                                 AdmitDate = em.AdmitDate,
+                                 FacilityCode = em.FacilityCode
+
+                             } ).ToList();
+
+            return EligibleAuthRec;
         }
 
         public List<EligibleAccounts> GetEligibleAuthschedulerlog(TranContext tranContext,List<int> actualResistrationIDs)
         {
-
-            //select distinct registrationid  from Authschedulerlog where  createddatetime > '2020-02-17' -- current date , no time
-            //and  registrationid in (1333845)
 
             var authSchedulerLogResult = (from authScheduler in tranContext.AuthSchedulerLog
                                           where authScheduler.CreatedDateTime > DateTime.Now && actualResistrationIDs.Contains(authScheduler.RegistrationID)
@@ -90,8 +111,6 @@ namespace PxTransformAutomation.DataService
 
         public List<EligibleAccounts> GetEligibleAuthRequestLog(TranContext tranContext, List<int> actualResistrationIDs)
         {
-            //select distinct registrationid  from Authschedulerlog where  createddatetime > '2020-02-17' -- current date , no time
-            //and  registrationid in (1333845)
 
             var authSchedulerLogResult = (from authScheduler in tranContext.AuthRequestLog
                                           where authScheduler.DateSent > DateTime.Now && actualResistrationIDs.Contains(authScheduler.RegistrationID)

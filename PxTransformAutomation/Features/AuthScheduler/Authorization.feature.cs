@@ -206,6 +206,9 @@ testRunner.And("Add Header As facilityCode With its value", ((string)(null)), ((
 testRunner.When("User executes the GET request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 24
+testRunner.And("user get the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
 testRunner.Then("user should get eligible accounts whose coverage is not self pay in the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -219,7 +222,7 @@ testRunner.Then("user should get eligible accounts whose coverage is not self pa
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Authschedulerlog  for valid accounts", null, ((string[])(null)));
-#line 26
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -239,19 +242,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 27
+#line 28
 testRunner.Given("User has GET request AuthAPI with mindaysout and maxdaysout parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 28
+#line 29
 testRunner.And("Add Header As facilityCode With its value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 30
 testRunner.When("User executes the GET request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 31
 testRunner.And("user get the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 32
 testRunner.And("Authschedulerlog should have entry for all the eligible accounts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -265,7 +268,7 @@ testRunner.And("Authschedulerlog should have entry for all the eligible accounts
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate AuthRequestLog  for valid accounts", null, ((string[])(null)));
-#line 33
+#line 34
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -285,19 +288,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 34
+#line 35
 testRunner.Given("User has GET request AuthAPI with mindaysout and maxdaysout parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 35
+#line 36
 testRunner.And("Add Header As facilityCode With its value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 36
+#line 37
 testRunner.When("User executes the GET request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 38
 testRunner.And("user get the response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 39
 testRunner.And("authrequestlog should have entry for all the eligible accounts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

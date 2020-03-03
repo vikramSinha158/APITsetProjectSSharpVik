@@ -24,7 +24,9 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         private DataCollector _dataCollector;
         private int getStatusCode;
         private List<int> actualResistrationIDs;
-       
+        private int _minDaysOut;
+        private int _maxDaysOut;
+
 
         public AuthSchedulerStepDef(Settings settings, DataCollector dataCollector)
         {
@@ -32,11 +34,13 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
             _dataCollector = dataCollector;
             _tranContext = _dataCollector.GetLocationInstance().GetTranContext(_settings.Util.TranViewDataServiceUrl["ConnectionStrings:TranFacilityCodeBCOR"]);
             _accretiveContext = _dataCollector.GetLocationInstance().GetAccretiveContext();
-    }
+            _minDaysOut = int.Parse(_settings.Util.GetTestData("MinDaysOut"));
+            _maxDaysOut = int.Parse(_settings.Util.GetTestData("MaxDaysOut"));
+        }
         [Given(@"User has GET request AuthAPI with mindaysout and maxdaysout parameters")]
         public void GivenUserHasGETRequestAuthAPIWithMindaysoutAndMaxdaysoutParameters()
         {
-            
+
             _settings.Request = _settings.lib.GetRequest(_settings.Util.GetTestData("Authurl"), Method.GET);
             _settings.ParameterList.Add("mindaysout",_settings.Util.GetTestData("MinDaysOut"));
             _settings.ParameterList.Add("maxdaysout", _settings.Util.GetTestData("MaxDaysOut"));
@@ -67,7 +71,6 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
             if (((RestSharp.RestResponse<PxTransformAutomation.Model.Authorization>)_settings.Response).Data.recordKeys.Count != 0)
             {
                 actualResistrationIDs = ((RestSharp.RestResponse<PxTransformAutomation.Model.Authorization>)_settings.Response).Data.recordKeys.ToList();
-                actualResistrationIDs.Sort();
             }
             else
             {
@@ -87,15 +90,10 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         [Then(@"user should get eligible accounts whose patienttype is not E in the response")]
         public void ThenUserShouldGetEligibleAccountsWhosePatienttypeIsNotEInTheResponse()
         {
-            var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext);
-            //var auThSched = _dataCollector.GetRegisterInstance().GetEligibleAuthschedulerlog(_tranContext, actualResistrationIDs);
-
-            List<int> regisID = new List<int>();
-     
-
-            regisID = _settings.lib.GetRegistrationIDlist(authE);
-
-            Assert.True(actualResistrationIDs.Equals(regisID), "Expected Data " + regisID.Count + " But found:- " + actualResistrationIDs.Count);
+                    
+            var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext, _minDaysOut, _maxDaysOut);
+      
+           Assert.True(_settings.Util.CompareList(actualResistrationIDs, _settings.lib.GetRegistrationIDlist(authE)), "Eligible account from response didn't match with expected received account ");
         }
 
 
@@ -110,14 +108,9 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         [Then(@"user should get eligible accounts whose coverage is not self pay in the response")]
         public void ThenUserShouldGetEligibleAccountsWhoseCoverageIsNotSelfPayInTheResponse()
         {
-            var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext);
-          
-            List<int> regisID = new List<int>();
+            var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext, _minDaysOut, _maxDaysOut);
 
-
-            regisID = _settings.lib.GetRegistrationIDlist(authE);
-
-            Assert.True(actualResistrationIDs.Equals(regisID), "Expected Data " + regisID.Count + " But found:- " + actualResistrationIDs.Count);
+            Assert.True(_settings.Util.CompareList(actualResistrationIDs, _settings.lib.GetRegistrationIDlist(authE)), "Eligible account from response didn't match with expected received account ");
         }
 
 
@@ -126,12 +119,7 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         {
             var authschedulerlog = _dataCollector.GetRegisterInstance().GetEligibleAuthschedulerlog(_tranContext, actualResistrationIDs);
 
-            List<int> regisIDauthschedulerlog = new List<int>();
-
-
-            regisIDauthschedulerlog = _settings.lib.GetRegistrationIDlist(authschedulerlog);
-
-            Assert.True(actualResistrationIDs.Equals(regisIDauthschedulerlog), "Expected Data " + regisIDauthschedulerlog.Count + " But found:- " + actualResistrationIDs.Count);
+            Assert.True(actualResistrationIDs.Count.Equals(authschedulerlog.Count), "Expected Data " + authschedulerlog.Count + " But found:- " + actualResistrationIDs.Count);
 
         }
 
@@ -146,17 +134,9 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
 
             regisIDauthRequestLog = _settings.lib.GetRegistrationIDlist(authRequestLog);
 
-            Assert.True(actualResistrationIDs.Equals(regisIDauthRequestLog), "Expected Data " + regisIDauthRequestLog.Count + " But found:- " + actualResistrationIDs.Count);
+            Assert.True(actualResistrationIDs.Count.Equals(authRequestLog.Count), "Expected Data " + authRequestLog.Count + " But found:- " + actualResistrationIDs.Count);
 
         }
-
-
-
-
-
-
-
-
 
     }
 }

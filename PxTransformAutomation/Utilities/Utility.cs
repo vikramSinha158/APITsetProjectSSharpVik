@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using PxTransformAutomation.Model;
+using System.Linq;
+
 
 namespace PxTransformAutomation.Utilities
 {
@@ -54,8 +56,14 @@ namespace PxTransformAutomation.Utilities
             }
         }
 
-    
-
+        public bool CompareList<T>(List<T> list, List<T> otherlist) where T : IEquatable<T>
+        {
+            if (list.Except(otherlist).Any())
+                return false;
+            if (otherlist.Except(list).Any())
+                return false;
+            return true;
+        }
 
     }
 }
