@@ -11,10 +11,15 @@ namespace PxTransformAutomation.DataService
     class LocationService : ILocationService
     {
         private Settings _settings;
+
+        #region Ctor
         public LocationService(Settings settings)
         {
             _settings = settings;
         }
+        #endregion
+
+        #region Methods
         public AccretiveContext GetAccretiveContext()
         {
             var optionsBuildertran = new DbContextOptionsBuilder<AccretiveContext>();
@@ -36,5 +41,6 @@ namespace PxTransformAutomation.DataService
             optionsBuildertran.UseSqlServer(this.GetTranConnection(facilityCode));
             return new TranContext(optionsBuildertran.Options);
         }
+        #endregion
     }
 }

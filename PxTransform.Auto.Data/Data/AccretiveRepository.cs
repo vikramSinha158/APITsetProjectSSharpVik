@@ -9,8 +9,12 @@ namespace PxTransform.Auto.Data.Data
 {
     public class AccretiveRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
+        #region Fields
         AccretiveContext _context;
         private DbSet<TEntity> table;
+        #endregion
+
+        #region Ctor
 
         public AccretiveRepository(AccretiveContext context)
         {
@@ -18,7 +22,9 @@ namespace PxTransform.Auto.Data.Data
             table = _context.Set<TEntity>();
         }
 
+        #endregion
 
+        #region Methods
         public TEntity GetById(object id)
         {
             return table.Find(id);
@@ -70,5 +76,6 @@ namespace PxTransform.Auto.Data.Data
         {
             return table;
         }
+        #endregion
     }
 }

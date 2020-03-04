@@ -26,14 +26,15 @@ namespace PxTransformAutomation.Hooks
     {
         //Global Variable for Extend report
 
-            
+        #region Fields   
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static AventStack.ExtentReports.ExtentReports extent;
         private readonly ScenarioContext _scenarioContext;
         private Settings _settings;
-        
+        #endregion
 
+        #region Ctor
         public Hooks(Settings settings,ScenarioContext scenarioContext)
         {
             _settings = settings;
@@ -41,7 +42,12 @@ namespace PxTransformAutomation.Hooks
             _settings.config = _settings.Util.TranViewDataServiceUrl;
            
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Used differnt Hooks for initialization of test case and Report
+        /// </summary>
         [BeforeScenario]
         public void TestSetup()
         {
@@ -79,7 +85,6 @@ namespace PxTransformAutomation.Hooks
         {
             //Create dynamic feature name
             featureName = extent.CreateTest<Feature>(featureContext.FeatureInfo.Title);
-            Console.WriteLine(featureName);
 
         }
 
@@ -140,5 +145,7 @@ namespace PxTransformAutomation.Hooks
         {
             return _settings.config["ConnectionStrings:ReportName"];
         }
+
+        #endregion
     }
 }

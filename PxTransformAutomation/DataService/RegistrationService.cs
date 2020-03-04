@@ -15,7 +15,15 @@ namespace PxTransformAutomation.DataService
 {
     public class RegistrationService: IRegistrationService
     {
-         
+        #region Methods
+        /// <summary>
+        /// Methode to get elogible account from database
+        /// </summary>
+        /// <param name="tranContext"></param>
+        /// <param name="accretiveContext"></param>
+        /// <param name="minDaysOut"></param>
+        /// <param name="maxDaysOut"></param>
+        /// <returns></returns>
         public List<EligibleAccounts> GetAuthEligibleAccounts(TranContext tranContext,AccretiveContext accretiveContext, int? minDaysOut, int? maxDaysOut)        
         {
 
@@ -96,6 +104,13 @@ namespace PxTransformAutomation.DataService
             return EligibleAuthRec;
         }
 
+        /// <summary>
+        /// Method to check elgible account ia available in Authschedulerlog
+        /// </summary>
+        /// <param name="tranContext"></param>
+        /// <param name="actualResistrationIDs"></param>
+        /// <returns></returns>
+
         public List<EligibleAccounts> GetEligibleAuthschedulerlog(TranContext tranContext,List<int> actualResistrationIDs)
         {
 
@@ -109,6 +124,13 @@ namespace PxTransformAutomation.DataService
             return authSchedulerLogResult;
         }
 
+        /// <summary>
+        /// Method to check elgible account ia available in AuthRequestLog
+        /// </summary>
+        /// <param name="tranContext"></param>
+        /// <param name="actualResistrationIDs"></param>
+        /// <returns></returns>
+
         public List<EligibleAccounts> GetEligibleAuthRequestLog(TranContext tranContext, List<int> actualResistrationIDs)
         {
 
@@ -121,5 +143,6 @@ namespace PxTransformAutomation.DataService
                                           }).Distinct().ToList();
             return authSchedulerLogResult;
         }
+        #endregion
     }
 }

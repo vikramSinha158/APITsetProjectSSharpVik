@@ -13,7 +13,10 @@ namespace PxTransformAutomation.Utilities
 {
     public class Utility
     {
-
+        #region Methods
+        /// <summary>
+        /// Methos to configure Json file in project
+        /// </summary>
         public IConfigurationRoot TranViewDataServiceUrl
         {
             get
@@ -25,12 +28,22 @@ namespace PxTransformAutomation.Utilities
             }
         }
 
+        /// <summary>
+        /// Method to get application folder
+        /// </summary>
+        /// <param name="appFolderName"></param>
+        /// <returns></returns>
         public string GetFolderPath(string appFolderName)
         {
             var folderName = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             return  Path.Combine(folderName.Substring(0, folderName.LastIndexOf("\\bin")), appFolderName + "\\");
         }
 
+        /// <summary>
+        /// Method  to read json file
+        /// </summary>
+        /// <param name="testDataPath"></param>
+        /// <returns></returns>
         public string LoadJson(string testDataPath)
         {
             using (StreamReader r = new StreamReader(testDataPath))
@@ -41,6 +54,11 @@ namespace PxTransformAutomation.Utilities
             }
         }
 
+        /// <summary>
+        /// Method to get key valye from json file test data
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public string GetTestData(String key)
         {           
             JObject obs1 = JObject.Parse(LoadJson(GetFolderPath(TranViewDataServiceUrl["ConnectionStrings:TestDataName"]) + TranViewDataServiceUrl["ConnectionStrings:ConfigFile"]));
@@ -48,6 +66,10 @@ namespace PxTransformAutomation.Utilities
 
         }
 
+        /// <summary>
+        /// Method to clear dictionary
+        /// </summary>
+        /// <param name="ParameterList"></param>
         public void CleanDictionary(Dictionary<string, string> ParameterList)
         {
             if (ParameterList.Count != 0)
@@ -55,7 +77,16 @@ namespace PxTransformAutomation.Utilities
                ParameterList.Clear();
             }
         }
-
+      /// <summary>
+      /// Method to comapre two lists
+      /// </summary>
+      /// <typeparam name="T"></typeparam>
+      /// <param name="list"></param>
+      /// <param name="otherlist"></param>
+      /// <returns></returns>
+ 
+ 
+       
         public bool CompareList<T>(List<T> list, List<T> otherlist) where T : IEquatable<T>
         {
             if (list.Except(otherlist).Any())
@@ -64,6 +95,7 @@ namespace PxTransformAutomation.Utilities
                 return false;
             return true;
         }
+        #endregion
 
     }
 }

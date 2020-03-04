@@ -18,16 +18,18 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
     [Binding]
     class AuthSchedulerStepDef
     {
+        #region Fields
         private Settings _settings;
         private readonly TranContext _tranContext;
         private readonly AccretiveContext _accretiveContext;
         private DataCollector _dataCollector;
-        private int getStatusCode;
         private List<int> actualResistrationIDs;
         private int _minDaysOut;
         private int _maxDaysOut;
+        #endregion
 
 
+        #region Ctor
         public AuthSchedulerStepDef(Settings settings, DataCollector dataCollector)
         {
             _settings = settings;
@@ -37,6 +39,9 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
             _minDaysOut = int.Parse(_settings.Util.GetTestData("MinDaysOut"));
             _maxDaysOut = int.Parse(_settings.Util.GetTestData("MaxDaysOut"));
         }
+        #endregion
+
+        #region StepsMethod
         [Given(@"User has GET request AuthAPI with mindaysout and maxdaysout parameters")]
         public void GivenUserHasGETRequestAuthAPIWithMindaysoutAndMaxdaysoutParameters()
         {
@@ -97,13 +102,13 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         }
 
 
-        [Given(@"user hits the AuthUri  with mindaysout and maxdaysout parameters")]
-        public void GivenUserHitsTheAuthUriWithMindaysoutAndMaxdaysoutParameters()
-        {
-            //var regdata = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext);
-            _settings.Request = _settings.lib.GetRequest("api/authorization?mindaysout=0&maxdaysout=5", Method.GET);
+        //[Given(@"user hits the AuthUri  with mindaysout and maxdaysout parameters")]
+        //public void GivenUserHitsTheAuthUriWithMindaysoutAndMaxdaysoutParameters()
+        //{
+        //    //var regdata = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext);
+        //    _settings.Request = _settings.lib.GetRequest("api/authorization?mindaysout=0&maxdaysout=5", Method.GET);
             
-        }
+        //}
 
         [Then(@"user should get eligible accounts whose coverage is not self pay in the response")]
         public void ThenUserShouldGetEligibleAccountsWhoseCoverageIsNotSelfPayInTheResponse()
@@ -137,6 +142,6 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
             Assert.True(actualResistrationIDs.Count.Equals(authRequestLog.Count), "Expected Data " + authRequestLog.Count + " But found:- " + actualResistrationIDs.Count);
 
         }
-
+        #endregion
     }
 }
