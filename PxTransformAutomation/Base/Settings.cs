@@ -7,7 +7,7 @@ using TechTalk.SpecFlow;
 using Microsoft.Extensions.Configuration;
 using PxTransform.Auto.Data.Data;
 using PxTransform.Auto.Data.Domain.Accretive;
-
+using PxTransformAutomation.Reports;
 
 namespace PxTransformAutomation.Base
 {
@@ -22,7 +22,9 @@ namespace PxTransformAutomation.Base
         public Dictionary<string, string> ParameterList { get; set; } = new Dictionary<string, string>();
         public IConfigurationRoot config { get; set; }
 
-        
+        public ReportConfiguration Report = new ReportConfiguration();
+
+
 
 
 

@@ -26,6 +26,7 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
         private List<int> actualResistrationIDs;
         private int _minDaysOut;
         private int _maxDaysOut;
+        private static bool elgibleAccountStatus = false;
         #endregion
 
 
@@ -99,23 +100,17 @@ namespace PxTransformAutomation.StepDefinition.AuthSchedulerStep
             var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext, _minDaysOut, _maxDaysOut);
       
            Assert.True(_settings.Util.CompareList(actualResistrationIDs, _settings.lib.GetRegistrationIDlist(authE)), "Eligible account from response didn't match with expected received account ");
+
+           elgibleAccountStatus = true;
         }
 
-
-        //[Given(@"user hits the AuthUri  with mindaysout and maxdaysout parameters")]
-        //public void GivenUserHitsTheAuthUriWithMindaysoutAndMaxdaysoutParameters()
-        //{
-        //    //var regdata = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext);
-        //    _settings.Request = _settings.lib.GetRequest("api/authorization?mindaysout=0&maxdaysout=5", Method.GET);
-            
-        //}
 
         [Then(@"user should get eligible accounts whose coverage is not self pay in the response")]
         public void ThenUserShouldGetEligibleAccountsWhoseCoverageIsNotSelfPayInTheResponse()
         {
             var authE = _dataCollector.GetRegisterInstance().GetAuthEligibleAccounts(_tranContext, _accretiveContext, _minDaysOut, _maxDaysOut);
 
-            Assert.True(_settings.Util.CompareList(actualResistrationIDs, _settings.lib.GetRegistrationIDlist(authE)), "Eligible account from response didn't match with expected received account ");
+            Assert.True(elgibleAccountStatus, "Eligible account from response didn't match with expected received account ");
         }
 
 

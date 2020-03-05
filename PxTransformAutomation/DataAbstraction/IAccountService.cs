@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PxTransformAutomation.Abstraction
 {
-    public interface IRegistrationService
+    public interface IAccountService
     {
         /// <summary>
         /// Define the method to get eligible Account

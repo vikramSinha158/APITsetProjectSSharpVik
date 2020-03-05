@@ -13,7 +13,7 @@ using PxTransform.Auto.Data.Domain.Common;
 
 namespace PxTransformAutomation.DataService
 {
-    public class RegistrationService: IRegistrationService
+    public class EligibleAccountService: IAccountService
     {
         #region Methods
         /// <summary>
@@ -29,8 +29,7 @@ namespace PxTransformAutomation.DataService
 
             var payorplans=  tranContext.PayorPlans.ToList();
 
-            //int? minDaysOut = 0;
-            //int? maxDaysOut = 5;
+          
             var PayorPlanID = (from hipaaConnector in accretiveContext.HIPAAConnectors
                             join hipaaPayorConnector in accretiveContext.HIPAAPayorConnectors on hipaaConnector.ID equals hipaaPayorConnector.ConnectorID
                             join accPayers in accretiveContext.Payors on hipaaPayorConnector.PayorCode.Trim() equals accPayers.PayorCode.Trim()

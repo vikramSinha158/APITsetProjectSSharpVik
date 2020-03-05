@@ -8,7 +8,7 @@ using PxTransformAutomation.Base;
 
 namespace PxTransformAutomation.DataService
 {
-    class LocationService : ILocationService
+    class LocationService:ILocationService
     {
         private Settings _settings;
 

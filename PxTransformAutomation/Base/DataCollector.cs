@@ -19,9 +19,9 @@ namespace PxTransformAutomation.Base
         {
             return new LocationService(_settings);
         }
-        public IRegistrationService GetRegisterInstance()
+        public IAccountService GetRegisterInstance()
         {
-            return new RegistrationService();
+            return new EligibleAccountService();
         }
     }
 }

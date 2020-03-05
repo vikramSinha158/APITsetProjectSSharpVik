@@ -15,6 +15,8 @@ using System.Reflection;
 using PxTransform.Auto.Data.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using PxTransformAutomation.Reports;
+
 namespace PxTransformAutomation.Hooks
 {
     
@@ -62,14 +64,8 @@ namespace PxTransformAutomation.Hooks
         [BeforeTestRun]
         public static void InitializeReport()
         {
-           string file = "ExtentReport.html";
-
-            var folderName = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);           
-            var path = Path.Combine(folderName.Substring(0, folderName.LastIndexOf("\\bin"))+"\\Reports", file);     
-            var htmlReporter = new ExtentHtmlReporter(path);
-            htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            extent = new AventStack.ExtentReports.ExtentReports();
-            extent.AttachReporter(htmlReporter);
+          
+            extent = ReportConfiguration.InitReport(extent);
 
         }
 
@@ -91,47 +87,8 @@ namespace PxTransformAutomation.Hooks
         [AfterStep]
         public void InsertReportingSteps()
         {
-            
-
-            PropertyInfo pInfo = typeof(ScenarioContext).GetProperty("ScenarioExecutionStatus", BindingFlags.Instance | BindingFlags.Public);
-            MethodInfo getter = pInfo.GetGetMethod(nonPublic: true);
-            object TestResult = getter.Invoke(_scenarioContext, null);
-
-            var stepType = _scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
-
-            if (_scenarioContext.TestError == null && TestResult.ToString()!= "StepDefinitionPending")
-            {
-                if (stepType == "Given")
-                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text);
-                else if (stepType == "When")
-                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text);
-                else if (stepType == "Then")
-                    scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text);
-                else if (stepType == "And")
-                    scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text);
-            }
-            else if (_scenarioContext.TestError != null)
-            {
-                if (stepType == "Given")
-                    scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
-                else if (stepType == "When")
-                    scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
-                else if (stepType == "Then")
-                    scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message);
-            }
-
-
-            //Pending Status
-            if (_scenarioContext.ScenarioExecutionStatus.ToString() == "StepDefinitionPending")
-            {
-                if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
-                else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
-                else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Skip("Step Definition Pending");
-
-            }
+         
+            _settings.Report.InsertStepsInReport(_scenarioContext,scenario);
         }
 
         [BeforeScenario]
