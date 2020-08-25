@@ -83,10 +83,13 @@ namespace PxTransformAutomation.Features.AuthScheduler
         [Xunit.SkippableFactAttribute(DisplayName="Validate user is getting positive response by hitting the AuthAPI")]
         [Xunit.TraitAttribute("FeatureTitle", "Auth Scheduler Validation")]
         [Xunit.TraitAttribute("Description", "Validate user is getting positive response by hitting the AuthAPI")]
+        [Xunit.TraitAttribute("Category", "Smoke")]
         public virtual void ValidateUserIsGettingPositiveResponseByHittingTheAuthAPI()
         {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate user is getting positive response by hitting the AuthAPI", null, ((string[])(null)));
+            string[] tagsOfScenario = new string[] {
+                    "Smoke"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate user is getting positive response by hitting the AuthAPI", null, new string[] {
+                        "Smoke"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

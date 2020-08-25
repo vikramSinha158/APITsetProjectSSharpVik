@@ -29,8 +29,11 @@ namespace PxTransformAutomation.Hooks
         //Global Variable for Extend report
 
         #region Fields   
+        [ThreadStatic]
         private static ExtentTest featureName;
+        [ThreadStatic]
         private static ExtentTest scenario;
+       
         private static AventStack.ExtentReports.ExtentReports extent;
         private readonly ScenarioContext _scenarioContext;
         private Settings _settings;

@@ -2,7 +2,7 @@
   //"Authurl": "api/authorization?mindaysout=0&maxdaysout=5",
   "Authurl": "api/authorization",
   "MinDaysOut": "0",
-  "MaxDaysOut": "5",
+  "MaxDaysOut": "15",
   "FacilityCodeHeaderValue": "BCOR",
   "ExpectedSatusCode": 200,
   "EnterpriseID": "M000002625",

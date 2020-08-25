@@ -2,7 +2,7 @@
 
 To Check eligible Account
 
-
+@Smoke
 Scenario: Validate user is getting positive response by hitting the AuthAPI
 Given User has GET request AuthAPI with mindaysout and maxdaysout parameters
 And Add Header As facilityCode With its value 
